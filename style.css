@@ -6,16 +6,16 @@ body{
     /* background-image: url("photos/background.jpeg");
     background-size: cover;
     background-repeat: no-repeat; */
-    background-color: aquamarine;
+    background-color: lightseagreen;
     height: 100vh;
     overflow: hidden;
 }
 a{
     position: absolute;
     top: 30%;
-    left: 43%;
+    left: 40%;
     height: 55px;
-    width: 200px;
+    width: 240px;
     border: 2px solid black;
     /* background-image: url(photos/background.jpeg);
     background-size: cover; */

@@ -18,6 +18,7 @@ let c=canvas.getContext("2d");
 //     c.stroke();
 // }
 
+
 function bubble(x,y,radius,dx,dy,color,opac){
     this.x=x;
     this.y=y;
@@ -26,14 +27,22 @@ function bubble(x,y,radius,dx,dy,color,opac){
     this.dy=dy;
     this.color=this.color;
     this.opac=opac;
+    this.hovered=false;
 
     this.draw=function() {
         // z=Math.random();
         c.beginPath();
         c.arc(this.x,this.y,this.radius,0,Math.PI*2,false);
+
+        if(this.hovered){
+            c.fillStyle=`rgba(0,0,255,${opac})`;
+        }
+        else{
+            c.fillStyle=`rgba(255,255,${color},${opac})`;
+        }
         c.strokeStyle="blue";
         c.stroke();
-        c.fillStyle=`rgba(255,255,${color},${opac})`;
+        // c.fillStyle=`rgba(255,255,${color},${opac})`;
         c.fill();
 
     }
@@ -49,6 +58,14 @@ function bubble(x,y,radius,dx,dy,color,opac){
 
         this.x+=this.dx;
         this.y+=this.dy;
+
+        if (mouse.x - this.x < this.radius && mouse.x - this.x > -this.radius &&
+            mouse.y - this.y < this.radius && mouse.y - this.y > -this.radius) {
+            this.hovered = true;
+        } else {
+            this.hovered = false;
+        }
+
 
         this.draw();
     }
@@ -67,6 +84,16 @@ for( let i=0;i<200;i++){
     bubbles.push(new bubble(x,y,radius,dx,dy,color,opac));
 }
 
+let mouse={
+    x:undefined,
+    y:undefined
+};
+
+canvas.addEventListener('mousemove',function(event){
+    mouse.x=event.x;
+    mouse.y=event.y;
+});
+
 function animate(){
     requestAnimationFrame(animate);
     c.clearRect(0,0,innerWidth,innerHeight);
@@ -77,3 +104,8 @@ function animate(){
 }
 
 animate();
+
+window.addEventListener('resize', function() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+});
