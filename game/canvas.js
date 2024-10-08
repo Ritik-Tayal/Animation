@@ -4,7 +4,6 @@ let coins=[];
 let points=0;
 let gameWon=false;
 
-
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
@@ -84,12 +83,15 @@ function animate() {
 }
 canvas.addEventListener("mouseenter", () => {
     if (!gameWon) {
+        initCoins();
         animate(); 
     }
 });
 
 canvas.addEventListener("mouseleave", () => {
-    c.clearRect(0, 0, canvas.width, canvas.height); 
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    points=0;
+    coins=[]; 
 });
 
 canvas.addEventListener("click", (event) => {
@@ -99,4 +101,4 @@ canvas.addEventListener("click", (event) => {
     detectClick(mouseX, mouseY); 
 });
 
-initCoins();
+// initCoins();
