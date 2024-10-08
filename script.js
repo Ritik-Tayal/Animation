@@ -31,9 +31,9 @@ function bubble(x,y,radius,dx,dy,color,opac){
         // z=Math.random();
         c.beginPath();
         c.arc(this.x,this.y,this.radius,0,Math.PI*2,false);
-        c.strokeStyle="white";
+        c.strokeStyle="blue";
         c.stroke();
-        c.fillStyle=`rgba(0,0,${color},${opac})`;
+        c.fillStyle=`rgba(255,255,${color},${opac})`;
         c.fill();
 
     }
