@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-image: url("photos/background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: aquamarine;
+    height: 100vh;
+    overflow: hidden;
+}
+a{
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    height: 55px;
+    width: 200px;
+    border: 2px solid black;
+    /* background-image: url(photos/background.jpeg);
+    background-size: cover; */
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+button{
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
