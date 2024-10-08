@@ -7,6 +7,11 @@ let gameWon=false;
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
+function refresh(){
+    let h1=document.querySelector("h1");
+    h1.scrollIntoView();
+    location.reload();
+}
 
 function Coin(x, y, radius, dx, dy) {
     this.x = x;
@@ -68,6 +73,7 @@ function checkWinCondition() {
         let div=document.querySelector("div");
         console.dir(div);
         div.style.visibility="visible";
+        div.scrollIntoView({behavior:"smooth"});
         gameWon = true;
     }
 }
