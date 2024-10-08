@@ -34,7 +34,7 @@ canvas{
 div{
     margin-top: 100vh;
     height: 100vh;
-    display:none;
+    visibility: hidden;
 }
 h2{
     position: relative;

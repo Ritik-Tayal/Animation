@@ -65,7 +65,9 @@ function detectClick(x, y) {
 
 function checkWinCondition() {
     if (points === 5) {
-        alert("You Win! 🎉"); 
+        let div=document.querySelector("div");
+        console.dir(div);
+        div.style.visibility="visible";
         gameWon = true;
     }
 }
