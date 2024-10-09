@@ -36,11 +36,11 @@ function bubble(x,y,radius,dx,dy,color,opac){
 
         if(this.hovered){
             c.fillStyle=`rgba(0,0,255,${opac})`;
-            c.strokeStyle="white";
+            c.strokeStyle="blue";
         }
         else{
             c.fillStyle=`rgba(255,255,${color},${opac})`;
-            c.strokeStyle="blue";
+            c.strokeStyle="white";
         }
 
         c.stroke();
